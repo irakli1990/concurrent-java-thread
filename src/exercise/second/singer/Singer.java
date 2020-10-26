@@ -3,6 +3,12 @@ package exercise.second.singer;
 /**
  * @author Irakli Kardava
  * Singer is not drunk yet
+ * Let’s assume that the threads from Exercise 1 are connected in a list, so that a thread with N=i directly precedes the thread with N=i+1.
+ * This can be achieved with adding Singer next private field to Singer class which can be set with an additional public void setNext(Singer next) { this.next = next; } method.
+ * Try to modify the run() method of the threads so that the lyrics of the song are printed in order, i.e. starting at 99 down to 0.
+ *
+ * The structure of the main() method in this case should resemble the following
+ * @see exercise.second.Main
  */
 public class Singer extends Thread {
     private final int bottleCount;
