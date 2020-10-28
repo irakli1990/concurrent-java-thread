@@ -16,11 +16,13 @@ public class Alice extends Thread {
 
     @Override
     public  void run() {
+        this.setName(TAG);
         try {
-            for (int i = 1; i < 10; i++) {
+            for (int i = 1; i <= 10; i++) {
                 System.out.printf("%s Sending to Bob: %s%n", TAG, i);
                 this.bob.setInput(i);
                 Thread.sleep(1000);
+                this.bob.run();
             }
         } catch (Exception e) {
             System.out.println(e);
